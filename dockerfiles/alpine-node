@@ -1,0 +1,10 @@
+FROM mhart/alpine-node:8.11.1
+EXPOSE 8080
+RUN apk add --no-cache bind-tools
+
+WORKDIR /app
+COPY . .
+
+RUN npm install --production
+
+CMD ["node", "index.js"]
