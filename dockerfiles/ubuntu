@@ -1,0 +1,5 @@
+FROM ubuntu
+EXPOSE 8080
+ADD simpleweb /
+RUN apt-get update && apt-get install -y dnsutils
+CMD ["/simpleweb"]
